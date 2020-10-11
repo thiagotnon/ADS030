@@ -17,21 +17,12 @@
                 <span class="font-weight-bold">aluno</span><span class="font-weight-bold text-muted">online</span>
             </h1>
         </div>
-        <% if (error !== '') { %>
-        <div class="alert alert-warning" role="alert">
-            <%= error %>
-        </div>
-        <% } %>
         <div class="form-group">
-            <label for="inputMatricula">Matrícula</label>
-            <input type="text" class="form-control" name="matricula" id="inputMatricula" autofocus required>
+            <label for="inputEmail">E-mail</label>
+            <input type="email" class="form-control" name="email" id="inputEmail" autofocus required>
         </div>
-        <div class="form-group">
-            <label for="inputSenha">Senha</label>
-            <input type="password" class="form-control" name="senha" id="inputSenha">
-        </div>
-        <button class="btn btn-lg btn-danger btn-block" type="submit">Entrar</button>
-        <p class="mt-2 text-center"><a class="text-decoration-none text-danger" href="/remember">Esqueci minha senha</a>
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Enviar</button>
+        <p class="mt-2 text-center"><a class="text-decoration-none text-danger" href="/">Voltar</a>
         </p>
         <footer class="text-muted text-center pt-3">&copy; 2019</footer>
     </form>

@@ -42,8 +42,8 @@ router.get('/logout', function(req, res, next) {
 });
 
 /* GET remember page. */
-router.get('/remember', function(req, res, next) {
-  res.send('Não implementado!');
+router.get('/', function(req, res, next) {
+  res.redirect('/remember');
 });
 
 module.exports = router;
