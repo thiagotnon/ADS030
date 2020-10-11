@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var notasRouter = require('./routes/notas');
+var faltasRouter = require('./routes/faltas');
+var boletosRouter = require('./routes/boletos');
 var requerimentosRouter = require('./routes/requerimentos');
 
 var app = express();
@@ -22,6 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/favicon.ico', express.static('public/images/favicon.ico'));
 
 app.use('/', indexRouter);
+app.use('/notas', notasRouter);
+app.use('/faltas', faltasRouter);
+app.use('/boletos', boletosRouter);
 app.use('/requerimentos', requerimentosRouter);
 
 // catch 404 and forward to error handler
