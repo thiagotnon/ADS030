@@ -36,4 +36,13 @@ router.post('/novo', function(req, res, next) {
   res.redirect('/requerimentos');
 });
 
+router.get('/detalhe/:id', function(req, res, next) {
+  const id = req.params.id - 1;
+  if (req.session.alunoLogado == null) {
+    return res.redirect('/login');
+  }
+  console.log(requerimentosDB.data[id])
+  res.render('detalhe_requerimento', { title: 'Detalhe de Requerimento - Aluno Online', action: 'detalhe', requerimentos: requerimentosDB.data[id] })
+});
+
 module.exports = router;

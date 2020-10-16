@@ -46,32 +46,15 @@
   </nav>
   <div class="container p-2 p-md-4">
     <div class="card">
-      <div class="card-header">
-        <span class="font-weight-bold">Seus requerimentos</span>
-        <a href="/requerimentos/novo" class="btn btn-danger btn-sm float-right">Novo</a>
+      <div class="card-header d-flex align-items-center justify-content-between">
+        <span class="font-weight-bold"><%= requerimentos.disciplina %></span>
+        <span class="badge <%= requerimentos.estilo %>"><%= requerimentos.situacao %></span>
       </div>
       <div class="card-body">
-        <div class="row font-weight-bold bg-light border-bottom">
-          <div class="col-md-5">Curso</div>
-          <div class="col-md-2">Período</div>
-        </div>
-        <div class="row pt-2 pb-2">
-          <div class="col-md-5"><%= semestre.curso %></div>
-          <div class="col-md-2"><%= semestre.periodo %></div>
-        </div>
-        <div class="row font-weight-bold bg-light">
-          <div class="col-md-5">Disciplina</div>
-          <div class="col-md-2">Prova</div>
-          <div class="col-md-2">Situação</div>
-        </div>
-        <% requerimentos.forEach(function(requerimento, index) { %>
-        <div class="row border-top pt-2 pb-2">
-          <div class="col-md-5"><%= requerimento.disciplina %></div>
-          <div class="col-md-2"><%= requerimento.prova %></div>
-          <div class="col-md-2"><span class="badge <%= requerimento.estilo %>"><%= requerimento.situacao %></span></div>
-          <div class="col-md-2"><a class="btn btn-danger btn-sm" href="/requerimentos/detalhe/<%= requerimento.id %>">Detalhe</a></div>
-        </div>
-        <% }) %>
+        <h5>Prova: <strong><%= requerimentos.prova %></h5></strong>
+        <hr>
+        <h6>Argumentação</h6>
+        <p><%= requerimentos.argumentacao %></p>
       </div>
     </div>
   </div>
