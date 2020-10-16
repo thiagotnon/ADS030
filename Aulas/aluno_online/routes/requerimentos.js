@@ -7,11 +7,17 @@ const semestresDB = require('../data/semestres.json');
 
 /* GET requeriments listing. */
 router.get('/', function(req, res, next) {
+  if (req.session.alunoLogado == null) {
+    return res.redirect('/login');
+  }
   res.render('lista_requerimentos', { title: 'Aluno Online', semestre: semestresDB.data[0], requerimentos: requerimentosDB.data });
 });
 
 /* GET requeriment new. */
 router.get('/novo', function(req, res, next) {
+  if (req.session.alunoLogado == null) {
+    return res.redirect('/login');
+  }
   res.render('novo_requerimento', { title: 'Aluno Online', disciplinas: disciplinasDB.data });
 });
 

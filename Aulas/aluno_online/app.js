@@ -3,12 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var notasRouter = require('./routes/notas');
 var faltasRouter = require('./routes/faltas');
 var boletosRouter = require('./routes/boletos');
 var requerimentosRouter = require('./routes/requerimentos');
+var rememberRouter = require('./routes/remember');
 
 var app = express();
 
@@ -21,6 +23,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//app.set('trust proxy', 1); 
+app.use(session({
+  secret: 'keyboard cat',/* 
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true } */
+}));
 
 app.use('/favicon.ico', express.static('public/images/favicon.ico'));
 
@@ -29,6 +38,7 @@ app.use('/notas', notasRouter);
 app.use('/faltas', faltasRouter);
 app.use('/boletos', boletosRouter);
 app.use('/requerimentos', requerimentosRouter);
+app.use('/remember', rememberRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
