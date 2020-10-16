@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "id": 3,
+            "emissao": "01/9/2020",
+            "vencimento": "07/9/2020",
+            "situacao": "Pago",
+            "estilo": "badge-success"
+        },
+        {
+            "id": 4,
+            "emissao": "01/10/2020",
+            "vencimento": "07/10/2020",
+            "situacao": "Vencido",
+            "estilo": "badge-danger"
+        },
+        {
+            "id": 5,
+            "emissao": "01/11/2020",
+            "vencimento": "07/11/2020",
+            "situacao": "Pendente",
+            "estilo": "badge-warning"
+        }
+    ]
+}

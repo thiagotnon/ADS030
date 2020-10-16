@@ -45,12 +45,85 @@
     </div>
   </nav>
   <div class="container p-2 p-md-4">
-    <div class="card">
-      <div class="card-header">
-        <span class="font-weight-bold">Olá, <%= aluno.nome %>!</span>
+    <h3>Olá, <%= aluno.nome %>!</h3>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="font-weight-bold">Boletos</span>
+            <a href="/boletos" class="btn btn-danger btn-sm text-right">Ver todos</a>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <% boletos.forEach(function(boletos, index) { %>
+                <li class="list-group-item py-2 px-0" value="<%= boletos.id %> - <%= boletos.id %>">
+                  <div class="">
+                   <div class="d-flex justify-content-between align-items-start">
+                    <p class="mb-0">
+                      <small><strong>Emissão</strong></small><br>
+                      <span><%= boletos.emissao %></span>
+                    </p>
+                    <p class="mb-0">
+                      <small><strong>Vencimento</strong></small><br>
+                      <span><%= boletos.vencimento %></span>
+                    </p>
+                    <p class="mb-0">
+                      <small>Situação:</small><br>
+                      <span class="badge <%= boletos.estilo %>"><%= boletos.situacao %>  </span>
+                    </p>
+                   </div>
+                    
+                  </div>
+                </li>
+                <% }) %> 
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <p>Aqui você tem acesso às suas notas e faltas, emite seus boletos e solicita requerimentos de revisão de menção.</p>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="font-weight-bold">Resumo de faltas</span>
+            <a href="/faltas" class="btn btn-danger btn-sm text-right">Ver todas</a>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <% disciplinas.forEach(function(disciplina, index) { %>
+                <li class="list-group-item py-2 px-0" value="<%= disciplina.id %> - <%= disciplina.nome %>">
+                  <div class="d-flex justify-content-between">
+                    <small><strong class="text-muted"><%= disciplina.id %></strong></small>
+                    <small><span class="badge badge-secondary"><%= disciplina.faltas %>%</span></small>
+                  </div>
+                  <p class="my-0"><%= disciplina.nome %></p>
+                </li>
+                <% }) %> 
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="font-weight-bold">Requerimentos recentes</span>
+            <a href="/requerimentos" class="btn btn-danger btn-sm text-right">Ver todos</a>
+          </div>
+          <div class="card-body">
+            <% requerimentos.forEach(function(requerimento, index) { %>
+              <div class="list-group mb-2">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <small><span class="badge <%= requerimento.estilo %>"><%= requerimento.situacao %></span></small>
+
+                  <div class="d-flex justify-content-between">
+                    
+                    <h6 class="mb-1"><%= requerimento.disciplina %></h6>
+                    <small><span class="badge badge-secondary"><%= requerimento.prova %></span></small>
+                  </div>
+                </a>
+              </div>
+              <% }) %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
