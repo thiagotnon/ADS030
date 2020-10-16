@@ -2,19 +2,23 @@
     "data": [
         {
             "id": "ADS030",
-            "nome": "Manutenção de Software e DevOps"
+            "nome": "Manutenção de Software e DevOps",
+            "faltas": 18
         },
         {
             "id": "ADS032",
-            "nome": "Construção de Frontend"
+            "nome": "Construção de Frontend",
+            "faltas": 21
         },
         {
             "id": "ADS038",
-            "nome": "Governança de TI"
+            "nome": "Governança de TI",
+            "faltas": 13
         },
         {
             "id": "ADS040",
-            "nome": "Business Intelligence e Data Warehousing"
+            "nome": "Business Intelligence e Data Warehousing",
+            "faltas": 16
         }
     ]
 }
