@@ -1,5 +1,8 @@
 Dado('que o aluno deseja efetuar login') do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 49e944eead56e8deddae7a3991460fcb533d76ff
    visit 'http://localhost:3000/'
 end
   
@@ -11,6 +14,7 @@ end
   
 Então('deve ser exibido a mensagem {string}') do |msg|
    page.has_content?msg
+<<<<<<< HEAD
 =======
     visit 'http://online.iesb.br/aonline/logon.asp'
 end
@@ -24,4 +28,6 @@ end
 Então('deve ser exibida a mensagem {string}') do |msg|    
     page.accept_alert(msg)
 >>>>>>> upstream/master
+=======
+>>>>>>> 49e944eead56e8deddae7a3991460fcb533d76ff
 end
